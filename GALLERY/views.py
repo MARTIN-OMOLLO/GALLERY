@@ -16,7 +16,7 @@ def gallery_of_day(request):
             </body>
         </html>
             '''
-    return HttpResponse(html)
+    return render(request, 'current-photos.html')
     
 
 def convert_dates(dates):
@@ -30,6 +30,6 @@ def convert_dates(dates):
     day = days[day_number]
     return day
 
-def news_of_day(request):
+def gallery_of_day(request):
     date = dt.date.today()
     return render(request, 'all-gallery/current-photos.html', {"date": date,})
