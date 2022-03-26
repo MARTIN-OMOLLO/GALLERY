@@ -2,7 +2,13 @@ from django.db import models
 
 # Create your models here.
 
-class Editor(models.Model):
+class Category(models.Model):
     first_name = models.CharField(max_length =30)
-    last_name = models.CharField(max_length =30)
-    email = models.EmailField()
+    
+
+class Photos(models.Model):
+    title = models.CharField(max_length =60)
+    post = models.TextField()
+    category = models.ForeignKey(Category , on_delete=models.CASCADE)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to = 'gallery', blank = False)

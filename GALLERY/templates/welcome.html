@@ -1,5 +1,5 @@
 
-{%include "all-gallery/base.html"%}
+{%include "all-gallery/search.html"%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +9,17 @@
     <title>Galllery</title>
 </head>
 <body>
-    <h1> Welcome to My Galllery</h1>
+   {% for photo in photos%}
+   <p>{{photo.title}}</p>
+   <p>{{photo.category}}</p>
+   <p>{{photo.pub_date}}</p>
+   <img src="{{photo.image.url}}" alt="">
+   <p>{{photo.post}}</p>
+
+   {% empty %}
+   <div>
+       <p>no items to display</p>
+   </div>
+   {% endfor %}
 </body>
 </html>
