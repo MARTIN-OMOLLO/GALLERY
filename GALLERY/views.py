@@ -19,7 +19,7 @@ def gallery_of_day(request):
     return HttpResponse(html)
     
 
-    def convert_dates(dates):
+def convert_dates(dates):
 
     # Function that gets the weekday number for the date.
     day_number = dt.date.weekday(dates)
