@@ -1,5 +1,5 @@
 import os
-import django_on-heroku
+import django_heroku
 from decouple import config,Csv
 import dj_database_url
 
@@ -51,7 +51,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Configure Django App for Heroku.
- django_on-heroku.settings(locals())
+ django_heroku.settings(locals())
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
