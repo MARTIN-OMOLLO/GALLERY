@@ -52,19 +52,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Configure Django App for Heroku.
-django_heroku.settings(locals())
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-    'whitenoise.storage.CompressedManifestStaticFilesStorage'
-)
 
 
 # Quick-start development settings - unsuitable for production
@@ -158,6 +146,20 @@ TIME_ZONE = 'Africa/Nairobi'
 USE_I18N = True
 
 USE_TZ = True
+
+django_heroku.settings(locals())
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    'whitenoise.storage.CompressedManifestStaticFilesStorage'
+)
 
 
 # Static files (CSS, JavaScript, Images)
