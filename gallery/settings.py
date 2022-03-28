@@ -112,7 +112,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'gallery.wsgi.application'
 
 
-# Database
+# Database.
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
