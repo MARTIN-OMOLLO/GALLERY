@@ -1,6 +1,7 @@
 import os
 import django_heroku
 from decouple import config,Csv
+import dj_database_url
 
 if config('MODE')=="dev":
    DATABASES = {
