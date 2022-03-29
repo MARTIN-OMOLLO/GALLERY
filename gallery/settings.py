@@ -2,7 +2,14 @@ import os
 import django_heroku
 from decouple import config,Csv
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
+MODE=config("MODE", default="dev")
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+# development
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
@@ -27,7 +34,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
 """
 Django settings for gallery project.
 
@@ -61,6 +67,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-8m*z0b91om85k!sgjnr_*1uccu+szolkf@fu8149!oq#6i$qp1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 
 
 # Application definition
@@ -74,7 +81,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
-    'GALLERY.apps.GalleryConfig'
+    'GALLERY.apps.GalleryConfig',
+    'cloudinary',
     
     
 ]
@@ -176,3 +184,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# adding config
+cloudinary.config( 
+  cloud_name = "drnrh0spo", 
+  api_key = "921676172689963", 
+  api_secret = "ZlJCPPe0gVA4sHzLC4y-rlPld7A" 
+)

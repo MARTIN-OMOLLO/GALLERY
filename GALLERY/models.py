@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -11,4 +12,4 @@ class Photos(models.Model):
     post = models.TextField()
     category = models.ForeignKey(Category , on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to = 'gallery', blank = False)
+    image = CloudinaryField('image')
