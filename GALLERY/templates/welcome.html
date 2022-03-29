@@ -1,5 +1,6 @@
 
 {%include "all-gallery/search.html"%}
+{%include "navbar.html"%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
    <p>{{photo.title}}</p>
    <p>{{photo.category}}</p>
    <p>{{photo.pub_date}}</p>
-   <img src="{{photo.image.url}}" style="height:250px; margin: 20vh; background-color: darkkhaki;" height="350vh">
+   <img src="{{photo.image.url}}" style="height:350px; margin: 20vh; background-color: darkkhaki;" height="350vh">
    <p>{{photo.post}}</p>
 
    {% empty %}
