@@ -18,5 +18,5 @@ def test_save_method(self):
         self.assertTrue(len(Photos)>0)
 
 def test_search_by_category(self):
-        photos = Picture.search_picture_by_category('hope')
+        photos = Picture.search_picture_by_category('Hope')
         self.assertTrue(len(gallery)>0)
