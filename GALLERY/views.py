@@ -9,7 +9,7 @@ def welcome(request):
 
 def details(request):
     photos = Photos.objects.all()
-    return render(request, 'all-gallery/details.html',{'photos': photos[::-1],})
+    return render(request, 'all-gallery/details.html',{'photos': photos})
 
 
 def search_results(request):
