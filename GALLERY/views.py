@@ -5,11 +5,11 @@ from .models import category, Photos
 # Create your views here.
 def welcome(request):
     photos = Photos.objects.all()
-    return render(request, 'welcome.html',{'photos': photos[::-1]})
+    return render(request, 'welcome.html',{'photo': photos})
 
 def details(request):
-    images = Photos.objects.all()
-    return render(request, 'all-gallery/details.html',{'images': images})
+    photos = Photos.objects.all()
+    return render(request, 'all-gallery/details.html',{'photos': photos})
 
 
 def search_results(request):
