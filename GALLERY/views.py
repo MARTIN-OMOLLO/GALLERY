@@ -12,7 +12,7 @@ def details(request):
     return render(request, 'all-gallery/details.html',{'photos': photos[::-1],})
 
 
-def search(request):
+def search_results(request):
 
     if 'category_name' in request.GET and request.GET["category_name"]:
         search_term = request.GET.get("category_name")

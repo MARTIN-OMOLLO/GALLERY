@@ -1,16 +1,16 @@
 import os
 import django_heroku
-# from decouple import config,Csv
+from decouple import config,Csv
 import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
 # MODE=config("MODE", default="dev")
-MODE="dev"
+# MODE="dev"
 # SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = 'django-insecure-8m*z0b91om85k!sgjnr_*1uccu+szolkf@fu8149!oq#6i$qp1'
-DEBUG = os.environ.get('DEBUG', True)
+# SECRET_KEY = 'django-insecure-8m*z0b91om85k!sgjnr_*1uccu+szolkf@fu8149!oq#6i$qp1'
+# DEBUG = os.environ.get('DEBUG', True)
 # development
 # DATABASES = {
 #        'default': {
@@ -21,7 +21,7 @@ DEBUG = os.environ.get('DEBUG', True)
             
 #              }
        
-#    }
+   }
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
@@ -77,10 +77,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8m*z0b91om85k!sgjnr_*1uccu+szolkf@fu8149!oq#6i$qp1'
-
+# SECRET_KEY = 'django-insecure-8m*z0b91om85k!sgjnr_*1uccu+szolkf@fu8149!oq#6i$qp1'
+SECRET_KEY = config('SECRET_KEY')
+MODE=config("MODE", default="dev")
+DEBUG = config('DEBUG', default=False, cast=bool)
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 
 # Application definition
