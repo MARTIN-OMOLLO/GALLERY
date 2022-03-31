@@ -21,7 +21,9 @@ import cloudinary.api
             
 #              }
        
-   }
+#    }
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
