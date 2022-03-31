@@ -5,7 +5,7 @@ from .models import category, Photos
 # Create your views here.
 def welcome(request):
     photos = Photos.objects.all()
-    return render(request, 'welcome.html',{'photo': photos})
+    return render(request, 'welcome.html',{'photos': photo})
 
 def details(request):
     photos = Photos.objects.all()
