@@ -8,8 +8,8 @@ import cloudinary.api
 
 # MODE=config("MODE", default="dev")
 # MODE="dev"
-# SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = 'django-insecure-8m*z0b91om85k!sgjnr_*1uccu+szolkf@fu8149!oq#6i$qp1'
+SECRET_KEY = config('SECRET_KEY')
+# SECRET_KEY = 'django-insecure-8m*z0b91om85k!sgjnr_*1uccu+szolkf@fu8149!oq#6i$qp1'
 DEBUG = os.environ.get('DEBUG', True)
 # development
 # DATABASES = {
@@ -21,7 +21,7 @@ DEBUG = os.environ.get('DEBUG', True)
             
 #              }
        
-   }
+#    }
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
@@ -45,7 +45,7 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 ALLOWED_HOSTS=[]
 """
 Django settings for gallery project.
