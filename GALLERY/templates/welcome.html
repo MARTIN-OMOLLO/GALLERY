@@ -12,7 +12,7 @@
 
 <body style="background-color: darkgrey; text-align: center;">
     {% for photo in photos%}
-    <a style="text-decoration: none;" href="{% url 'view.details' %}" class="btn btn-outline-light btn-sm m-1" >
+    <a style="text-decoration: none;" href="{% url 'view_details' %}" class="btn btn-outline-light btn-sm m-1" >
         <img class="image-thumbail" src="{{photo.image.url}}" width="235px" height="170px"
             alt="Card image cap"></a>
     <!-- <img src="{{photo.image.url}}" style="height:358px; margin: 0vh; background-color: darkkhaki;"> -->
