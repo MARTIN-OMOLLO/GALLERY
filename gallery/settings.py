@@ -12,35 +12,35 @@ MODE="dev"
 SECRET_KEY = 'django-insecure-8m*z0b91om85k!sgjnr_*1uccu+szolkf@fu8149!oq#6i$qp1'
 DEBUG = os.environ.get('DEBUG', True)
 # development
-DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'tgallery',
-           'USER': 'martin',
-           'PASSWORD':'martin@123',
-            
-             }
-       
-   }
-# if config('MODE')=="dev":
-#    DATABASES = {
+# DATABASES = {
 #        'default': {
 #            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#            'NAME': config('DB_NAME'),
-#            'USER': config('DB_USER'),
-#            'PASSWORD': config('DB_PASSWORD'),
-#            'HOST': config('DB_HOST'),
-#            'PORT': '',
-#        }
+#            'NAME': 'tgallery',
+#            'USER': 'martin',
+#            'PASSWORD':'martin@123',
+            
+#              }
        
 #    }
-# # production
-# else:
-#    DATABASES = {
-#        'default': dj_database_url.config(
-#            default=config('DATABASE_URL')
-#        )
-#    }
+if config('MODE')=="dev":
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+           'NAME': config('DB_NAME'),
+           'USER': config('DB_USER'),
+           'PASSWORD': config('DB_PASSWORD'),
+           'HOST': config('DB_HOST'),
+           'PORT': '',
+       }
+       
+   }
+# production
+else:
+   DATABASES = {
+       'default': dj_database_url.config(
+           default=config('DATABASE_URL')
+       )
+   }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
