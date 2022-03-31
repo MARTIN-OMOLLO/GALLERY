@@ -8,12 +8,12 @@
     <title>Galllery</title>
 </head>
 <body style="background-color: darkgrey; text-align: center;">
-   {% for photo in photos%}
-   <p>{{photo.title}}</p>
-   <p>{{photo.category}}</p>
-   <p>{{photo.pub_date}}</p>
+   {% for image in images%}
+   <p>{{images.title}}</p>
+   <p>{{images.category}}</p>
+   <p>{{images.pub_date}}</p>
    <img src="{{photo.image.url}}" style="height:700px; margin: 0vh; background-color: darkkhaki;">
-   <p>{{photo.post}}</p>
+   <p>{{images.post}}</p>
 
    {% empty %}
    <div>
