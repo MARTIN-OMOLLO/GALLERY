@@ -10,10 +10,10 @@
             {% endif %}
         </div>
         <div class="col-md-4">
-        {% if category_name %} 
+        {% if photo.image %} 
         <small>Category: {{message}}</small>
         <a style="text-decoration: none;" href="#" class="btn btn-outline-light btn-sm m-1" >
-            <img class="image-thumbail" src="{{photos.image.url}}" width="235px" height="170px"
+            <img class="image-thumbail" src="{{photo.image.url}}" width="235px" height="170px"
                 alt="Card image cap"></a>
         {% endif %}
         </div>
